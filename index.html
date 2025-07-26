@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Anomaly Detected</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Very dark background */
+            color: #e0e0e0; /* Light grey text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden; /* Prevent scroll for glitch effect */
+        }
+        .container {
+            background-color: #2a2a2a; /* Slightly lighter dark background */
+            border: 2px solid #ff4500; /* Jarring orange border */
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.5); /* Orange glow */
+            animation: pulse-border 2s infinite alternate; /* Pulsing border effect */
+        }
+        .glitch-text {
+            color: #ff4500; /* Orange text for emphasis */
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(255, 69, 0, 0.7);
+            animation: glitch 0.5s infinite alternate; /* Glitch effect */
+        }
+        @keyframes pulse-border {
+            from { border-color: #ff4500; box-shadow: 0 0 20px rgba(255, 69, 0, 0.5); }
+            to { border-color: #ffa500; box-shadow: 0 0 30px rgba(255, 165, 0, 0.8); }
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); opacity: 1; }
+            20% { transform: translate(-2px, 2px); opacity: 0.8; }
+            40% { transform: translate(-2px, -2px); opacity: 1; }
+            60% { transform: translate(2px, 2px); opacity: 0.9; }
+            80% { transform: translate(2px, -2px); opacity: 0.8; }
+            100% { transform: translate(0); opacity: 1; }
+        }
+        /* Hidden clue styling */
+        .hidden-clue {
+            /* This is the key to hiding the element visually */
+            display: none;
+            /* Further obscuring techniques could include:
+            visibility: hidden;
+            opacity: 0;
+            font-size: 0.1px;
+            color: transparent;
+            position: absolute;
+            left: -9999px;
+            */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="container max-w-2xl mx-auto p-8 rounded-lg text-center shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 glitch-text">ACCESS DENIED.</h1>
+        <p class="text-lg mb-4">
+            Unauthorized system probe detected. Your connection is being monitored.
+            All data streams are being re-routed for analysis.
+        </p>
+        <div class="flex flex-col items-center space-y-4 mb-6">
+            <div class="bg-red-800 text-white p-3 rounded-md w-full max-w-xs">
+                <span class="font-bold">STATUS:</span> <span class="glitch-text">CRITICAL_ANOMALY</span>
+            </div>
+            <div class="bg-gray-700 text-gray-400 p-3 rounded-md w-full max-w-xs">
+                <span class="font-bold">PROCESS:</span> <span class="glitch-text">RECALIBRATING_PROTOCOL</span>
+            </div>
+        </div>
+        <img src="https://placehold.co/400x200/2a2a2a/ff4500?text=SCANNING..." alt="Scanning graphic" class="w-full h-auto rounded-md mb-6 animate-pulse">
+        <p class="text-sm text-gray-500">
+            Attempting to establish secure communication. Please remain still.
+        </p>
+
+        <!--
+            *********************************************************************************
+            * This div contains a hidden clue. It is not visible on the page,              *
+            * but can be found by inspecting the page's source code or using developer tools.*
+            * The clue is Base64 encoded.                                                   *
+            *********************************************************************************
+        -->
+        <div id="clue-container" class="hidden-clue" data-encoded-location="U2VjdG9yIDcgLSBOb2RlIEFsZmhh">
+            <!-- The Base64 for "Sector 7 - Node Alpha" is U2VjdG9yIDcgLSBOb2RlIEFsZmhh -->
+            <p>If you found this, you're on the right track. The creator's location is encoded here.</p>
+        </div>
+        <!-- End of hidden clue -->
+
+        <p class="text-xs text-gray-600 mt-8">
+            System Integrity Protocol v.1.0.0. Do not attempt to bypass.
+        </p>
+    </div>
+
+</body>
+</html>
