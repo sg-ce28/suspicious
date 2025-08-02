@@ -43,18 +43,13 @@
             80% { transform: translate(2px, -2px); opacity: 0.8; }
             100% { transform: translate(0); opacity: 1; }
         }
-        /* Hidden clue styling */
-        .hidden-clue {
-            /* This is the key to hiding the element visually */
-            display: none;
-            /* Further obscuring techniques could include:
-            visibility: hidden;
+
+        .resolution {
             opacity: 0;
             font-size: 0.1px;
             color: transparent;
             position: absolute;
             left: -9999px;
-            */
         }
     </style>
 </head>
@@ -78,15 +73,7 @@
         <p class="text-sm text-gray-500">
             Attempting to establish secure communication. Please remain still.
         </p>
-
-        <!--
-            *********************************************************************************
-            * This div contains a hidden clue. It is not visible on the page,              *
-            * but can be found by inspecting the page's source code or using developer tools.*
-            * The clue is Base64 encoded.                                                   *
-            *********************************************************************************
-        -->
-        <div id="clue-container" class="hidden-clue" data-encoded-location="U2VjdG9yIDcgLSBOb2RlIEFsZmhh">
+        <div id="style-container white-200 text-red g-8" class="resolution" data-encoded-location="U2VjdG9yIDcgLSBOb2RlIEFsZmhh">
             <!-- The Base64 for "Sector 7 - Node Alpha" is U2VjdG9yIDcgLSBOb2RlIEFsZmhh -->
             <p>If you found this, you're on the right track. The creator's location is encoded here.</p>
         </div>
